@@ -22,9 +22,10 @@ app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/public/home.html'));
 });
 
-app.get('/index', function(request, response) {
-	response.sendFile(path.join(__dirname + '/public/index.html'));
+app.get('/home', function(request, response) {
+	response.sendFile(path.join(__dirname + '/public/home.html'));
 });
+
 
 server.listen(process.env.PORT || 443); 
 
