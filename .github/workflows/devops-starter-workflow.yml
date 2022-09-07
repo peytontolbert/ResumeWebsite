@@ -55,6 +55,3 @@ jobs:
           publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
           package: .
  
-
-
- 
