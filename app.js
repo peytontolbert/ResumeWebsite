@@ -1,16 +1,17 @@
 var express = require('express');
 var path = require('path');
 const http = require("http");
-const { isBuffer } = require('util');
 
 var app = express();
 
 var server = http.createServer(app);
 
-app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/engineer', function(request, response) {
-	response.sendFile((__dirname + '/public/indexengineer.html'));
+	response.sendFile(path.join(__dirname + '/public/indexengineer.html'));
 });
 
 app.get('/devops', function(request, response) {
@@ -18,6 +19,10 @@ app.get('/devops', function(request, response) {
 });
 
 app.get('/', function(request, response) {
+	response.sendFile(path.join(__dirname + '/public/index.html'));
+});
+
+app.get('/home', function(request, response) {
 	response.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
