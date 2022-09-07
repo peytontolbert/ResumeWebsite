@@ -19,11 +19,11 @@ app.get('/devops', function(request, response) {
 });
 
 app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname + '/public/home.html'));
+	response.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 app.get('/home', function(request, response) {
-	response.sendFile(path.join(__dirname + '/public/home.html'));
+	response.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 
